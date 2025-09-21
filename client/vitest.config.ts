@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
 
-const isRunningOnGitHubActions = !!process.env.GITHUB_ACTIONS
+const isOnCI = !!process.env.CI
 
 export default defineConfig({
   plugins: [react()],
@@ -11,7 +11,7 @@ export default defineConfig({
       provider: 'playwright',
       instances: [
         { browser: 'chromium',
-          headless: isRunningOnGitHubActions
+          headless: isOnCI
         },
       ],
     }
