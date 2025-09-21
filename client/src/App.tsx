@@ -2,9 +2,19 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { trpc } from '.'
 
 function App() {
   const [count, setCount] = useState(0)
+
+  const handlePing = async () => {
+    try {
+      const pongResponse = await trpc.pong.query();
+      console.log('pongResponse:', pongResponse);
+    } catch (error) {
+      console.error('Error fetching pong:', error);
+    }
+  };
 
   return (
     <>
@@ -24,6 +34,9 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
+        <button onClick={handlePing}>
+          PONG
+        </button>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
