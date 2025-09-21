@@ -13,4 +13,11 @@ describe('tRPC router', () => {
     const result = await appRouter.createCaller({}).pong()
     expect(result).toBe('ping')
   })
+  it('should return an error for unknown procedure', async () => {
+    const caller = appRouter.createCaller({})
+    await expect(
+      // @ts-expect-error - Testing unknown procedure
+      caller.unknownProcedure()
+    ).rejects.toThrow()
+  })
 })
