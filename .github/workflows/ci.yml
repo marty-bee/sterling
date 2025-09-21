@@ -28,10 +28,10 @@ jobs:
         run: pnpm install
 
       - name: Install Playwright browsers
-        run: pnpm exec playwright install --with-deps chromium
+        run: pnpm --filter sterling-client exec playwright install --with-deps chromium
 
       - name: Run client tests (browser mode)
-        run: pnpm --filter client test -- --browser --headless
+        run: pnpm --filter sterling-client test -- --browser --headless
 
       - name: Run server tests
         run: pnpm --filter server test
