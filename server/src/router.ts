@@ -8,6 +8,9 @@ export const appRouter = t.router({
   ping: t.procedure.query(() => {
     return 'pong';
   }),
+  pong: t.procedure.query(() => {
+    return 'ping';
+  }),
   greeting: t.procedure
     .input(z.object({ name: z.string() }))
     .query(({ input }) => {
