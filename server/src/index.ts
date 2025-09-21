@@ -14,9 +14,11 @@ const app = new Hono();
     );
 
 // Start server
-serve({
-  fetch: app.fetch,
-  port: 4000,
-});
+// serve({
+//   fetch: app.fetch,
+//   port: 4000,
+// });
+
+export default app;
 
 console.log('🚀 Hono server running at http://localhost:4000/trpc');
