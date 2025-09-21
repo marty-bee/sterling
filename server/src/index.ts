@@ -9,7 +9,7 @@ const app = new Hono();
 
 // Forward /trpc/* routes to tRPC using hono-trpc adapter
     app.use(
-      '/trpc/*', // The URL path for your tRPC API
+      '/api/*', // The URL path for your tRPC API
       trpcServer({ router: appRouter })
     );
 
