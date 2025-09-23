@@ -20,7 +20,7 @@ app.use(
   })
 );
 
-app.use('/api/*', trpcServer({ router: appRouter }));
+app.use('/*', trpcServer({ router: appRouter }));
 
 if (isLocal) {
   serve({
