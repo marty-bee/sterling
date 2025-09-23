@@ -4,7 +4,11 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { trpc } from './trpc'
 
-function App() {
+type AppProps = {
+  trpc: typeof trpc;
+};
+
+const App = ({ trpc }: AppProps) => {
   const [count, setCount] = useState(0)
 
   const handlePing = async () => {
