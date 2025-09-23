@@ -10,17 +10,17 @@
       }
     },
     {
-      "src": "server/src/**/*.ts",
+      "src": "server/package.json",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": ["server/src/**/*.ts", "server/package.json"]
+        "includeFiles": ["server/**"]
       }
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/server/src/$1.ts"
+      "dest": "/server/index.ts"
     },
     {
       "src": "/(.*)",
