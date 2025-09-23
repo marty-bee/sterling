@@ -10,7 +10,7 @@ if (import.meta.env.MODE === 'development') {
   baseURL = 'http://localhost:4000/api';
 } else {
   // Production (Vercel)
-  baseURL = '/api';
+  baseURL = '';
 }
 
 export const trpc = createTRPCClient<AppRouter>({
